@@ -58,3 +58,5 @@ const log = (fileName: string, content: any): void => {
     logger.info(String(content));
   }
 };
+
+export { log }
