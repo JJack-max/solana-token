@@ -12,14 +12,14 @@ WALLET_NAME=$1
 AIRDROP_AMOUNT=$2
 
 # 创建钱包
-solana-keygen new --no-passphrase --outfile "/root/solana-token/log/${WALLET_NAME}-publickey.json"
+solana-keygen new --no-passphrase --outfile "/root/solana-token/logs/${WALLET_NAME}-publickey.json"
 
 # 获取公钥
-PUBLIC_KEY=$(solana-keygen pubkey "/root/solana-token/log/${WALLET_NAME}-publickey.json")
+PUBLIC_KEY=$(solana-keygen pubkey "/root/solana-token/logs/${WALLET_NAME}-publickey.json")
 
 echo "钱包创建成功，公钥为: $PUBLIC_KEY"
 
-mv "/root/solana-token/log/${WALLET_NAME}-publickey.json" "/root/solana-token/log/${WALLET_NAME}-${PUBLIC_KEY}.json"
+mv "/root/solana-token/loglogs/${WALLET_NAME}-publickey.json" "/root/solana-token/logs/${WALLET_NAME}-${PUBLIC_KEY}.json"
 
 # 如果提供了空投金额，则进行空投
 if
