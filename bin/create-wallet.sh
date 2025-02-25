@@ -19,7 +19,7 @@ PUBLIC_KEY=$(solana-keygen pubkey "/root/solana-token/logs/${WALLET_NAME}-public
 
 echo "钱包创建成功，公钥为: $PUBLIC_KEY"
 
-mv "/root/solana-token/loglogs/${WALLET_NAME}-publickey.json" "/root/solana-token/logs/${WALLET_NAME}-${PUBLIC_KEY}.json"
+mv "/root/solana-token/logs/${WALLET_NAME}-publickey.json" "/root/solana-token/logs/${WALLET_NAME}-${PUBLIC_KEY}.json"
 
 # 如果提供了空投金额，则进行空投
 if
