@@ -37,7 +37,7 @@ async function burn2(connection: Connection, payer: Keypair, account: PublicKey,
       account,
       mint,
       owner.publicKey,
-      100 * 1e8,
+      600.999999 * 1e8,
       8,
     ),
   );
