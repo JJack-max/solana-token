@@ -5,10 +5,10 @@ import { Connection, Keypair, PublicKey, sendAndConfirmTransaction, Transaction 
 (async () => {
 
   let connection = getConnection();
-  let payer = getWallet("logs/payer-DhNniw9HjpYKbvNtTiyZ225CujNr4HpByn21SNysm7n7.json");
-  let mintAuthority = getWallet("logs/mintAuthority-6VGigX1ScxmrMcQ1UjRZvboWZ81FRx6pV1a5WADTE4Ya.json");
-  let tokenPublicKey = new PublicKey("9rXedtDrnUFnJZDQZDrP3DrTBU72T7Fpk5twu44yuepb");
-  let tokenAccount = new PublicKey("G7cDr3tK4GpMUREQpvneQPfuANg7HQEoY4cEvjGbxMqW");
+  let payer = getWallet("logs/payer-HJLTj59bampq4nYPT52KqWP4HLsjJuQ8hfbXUMy7kGTi.json");
+  let mintAuthority = getWallet("logs/mintAuthority-GsVLE3jmhufL9zBCE1Td8sS4RnBKnd5LA8nSqG6sGw7F.json");
+  let tokenPublicKey = new PublicKey("DBdTo5yAY6Rykd2TrP3rd8oKNYEAMSGM1boYnMrJapvP");
+  let tokenAccount = new PublicKey("5fSN7Wdz1CTdjFLxL1TdUHYD3TGCWdv95R5hFQhRwghB");
 
   // mint1(connection, payer, tokenPublicKey, tokenAccount, mintAuthority);
   mint2(connection, payer, tokenPublicKey, tokenAccount, mintAuthority);
@@ -34,7 +34,7 @@ async function mint2(connection: Connection, payer: Keypair, tokenPublicKey: Pub
       tokenPublicKey,
       tokenAccount,
       mintAuthority.publicKey,
-      500 * 1e8,
+      1000 * 1e8,
       8,
     )
   );

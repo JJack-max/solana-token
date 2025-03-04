@@ -7,11 +7,11 @@ import { log } from "../common/my-log";
 
   let connection = getConnection();
 
-  let payer = getWallet("logs/payer-DhNniw9HjpYKbvNtTiyZ225CujNr4HpByn21SNysm7n7.json");
+  let payer = getWallet("logs/payer-HJLTj59bampq4nYPT52KqWP4HLsjJuQ8hfbXUMy7kGTi.json");
 
-  let owner = getWallet("logs/owner-J268JHvKUbRduunsW9RY6fHPDcoAAzyZedfc2Ggc3ZN2.json");
+  let owner = getWallet("logs/destination-7dCZM7m4XSmJQP1RVuHmj9EBieufMheMdUBF5vKDDyz8.json");
 
-  let tokenPublickey = new PublicKey("9rXedtDrnUFnJZDQZDrP3DrTBU72T7Fpk5twu44yuepb");
+  let tokenPublickey = new PublicKey("DBdTo5yAY6Rykd2TrP3rd8oKNYEAMSGM1boYnMrJapvP");
 
   // createTokenAccount1(connection, payer, owner.publicKey, tokenPublickey);
   createTokenAccount2(connection, payer, owner.publicKey, tokenPublickey);

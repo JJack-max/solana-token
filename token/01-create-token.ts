@@ -7,9 +7,9 @@ import { Connection, Keypair, sendAndConfirmTransaction, SystemProgram, Transact
 
   let connection = getConnection();
 
-  let payer = getWallet("logs/payer-DhNniw9HjpYKbvNtTiyZ225CujNr4HpByn21SNysm7n7.json");
-  let mintAuthority = getWallet("logs/mintAuthority-6VGigX1ScxmrMcQ1UjRZvboWZ81FRx6pV1a5WADTE4Ya.json");
-  let freezeAuthority = getWallet("logs/freezeAuthority-BLv3MfnQCtqnzFT95WQE2GtQopjMF1Cgf6RgPtpXz42j.json");
+  let payer = getWallet("logs/payer-HJLTj59bampq4nYPT52KqWP4HLsjJuQ8hfbXUMy7kGTi.json");
+  let mintAuthority = getWallet("logs/mintAuthority-GsVLE3jmhufL9zBCE1Td8sS4RnBKnd5LA8nSqG6sGw7F.json");
+  let freezeAuthority = getWallet("logs/freezeAuthority-DnetBkDnhS5YsCnbXamVdpn5pNvqD4N4RMzYe8A4qrTK.json");
 
   // create1(connection, payer, mintAuthority, freezeAuthority);
   create2(connection, payer, mintAuthority, freezeAuthority);
