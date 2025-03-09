@@ -1,8 +1,7 @@
 import Arweave from "arweave";
+import { JWKInterface } from "arweave/node/lib/wallet";
 import { readFileSync } from "fs";
 import { getArweave } from "../common/arweave";
-import { JWKInterface } from "arweave/node/lib/wallet";
-import { string } from "@metaplex-foundation/umi/serializers";
 
 (async () => {
     let arweave = getArweave();
