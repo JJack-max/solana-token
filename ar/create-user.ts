@@ -1,7 +1,6 @@
 import Arweave from "arweave";
 import { log } from "../common/my-log";
-import { getArweave } from "../common/arweave";
-import { airdrop } from "./airdrop-ar";
+import { airdrop, getArweave } from "../common/arweave";
 
 (async () => {
     const arweave: Arweave = getArweave();
