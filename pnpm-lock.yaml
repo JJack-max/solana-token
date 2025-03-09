@@ -41,6 +41,9 @@ importers:
       dotenv:
         specifier: ^16.4.7
         version: 16.4.7
+      mime-types:
+        specifier: ^2.1.35
+        version: 2.1.35
       winston:
         specifier: ^3.17.0
         version: 3.17.0

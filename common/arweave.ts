@@ -1,6 +1,9 @@
 import Arweave from "arweave";
 import { JWKInterface } from "arweave/node/lib/wallet";
-import { readFileSync } from "fs";
+import { existsSync, readFileSync } from "fs";
+import path from "path";
+import * as mime from 'mime-types';
+
 
 const getArweave = (): Arweave => {
     return Arweave.init({
@@ -10,8 +13,9 @@ const getArweave = (): Arweave => {
     });
 };
 
-const getWallet = (wallet: string): JWKInterface{
-    return JSON.parse(readFileSync(wallet, "utf-8"))
+const getWallet = (wallet: string): JWKInterface => {
+    let res: JWKInterface = JSON.parse(readFileSync(wallet, "utf-8"));
+    return res;
 }
 
 async function airdrop(arweave: Arweave, wallet: JWKInterface, num: number) {
@@ -27,7 +31,7 @@ async function airdrop2(arweave: Arweave, wallet: string, num: number) {
     console.log(`airdrop result:${JSON.stringify(res)}`);
 }
 
-async function uploda(arweave: Arweave, wallet: JWKInterface, file: string) {
+async function upload(arweave: Arweave, wallet: JWKInterface, file: string) {
 
     const host = arweave.getConfig().api.host;
     const port = arweave.getConfig().api.port;
@@ -104,4 +108,21 @@ async function uploda(arweave: Arweave, wallet: JWKInterface, file: string) {
     console.log(txnResult);
 }
 
-export { getArweave, getWallet, airdrop, airdrop2 }
+// 获取文件的 Content-Type
+function getFileContentType(filePath: string): string | null {
+    // 检查文件是否存在
+    if (!existsSync(filePath)) {
+        console.error('错误: 文件不存在');
+        return null;
+    }
+
+    // 获取文件扩展名
+    const ext = path.extname(filePath).toLowerCase();
+
+    // 使用 mime 库获取 Content-Type
+    const contentType = mime.getType(ext);
+
+    return contentType;
+}
+
+export { getArweave, getWallet, airdrop, airdrop2, upload }
