@@ -1,6 +1,7 @@
 import Arweave from "arweave";
 import { log } from "../common/my-log";
 import { getArweave } from "../common/arweave";
+import { airdrop } from "./airdrop-ar";
 
 (async () => {
     const arweave: Arweave = getArweave();
@@ -26,4 +27,8 @@ async function createUser(arweave: Arweave, name: string, num?: number) {
     const wallet = await arweave.wallets.generate();
     const address = await arweave.wallets.getAddress(wallet);
     log(`ar-${name}-${address}`, JSON.stringify(wallet));
+
+    if (num && num > 0) {
+        airdrop(arweave, address, num);
+    }
 }
