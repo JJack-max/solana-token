@@ -29,6 +29,6 @@ async function createUser(arweave: Arweave, name: string, num?: number) {
     log(`ar-${name}-${address}`, JSON.stringify(wallet));
 
     if (num && num > 0) {
-        airdrop(arweave, address, num);
+        airdrop(arweave, wallet, num);
     }
 }
