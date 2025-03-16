@@ -20,14 +20,14 @@ const getWallet = (wallet: string): JWKInterface => {
 
 async function airdrop(arweave: Arweave, wallet: JWKInterface, num: number) {
     const addr = await arweave.wallets.getAddress(wallet);
-    let res = await arweave.api.get(`mint/${addr}/10000000000000000`);
+    let res = await arweave.api.get(`mint/${addr}/${num * 1e12}`);
     console.log(`airdrop result:${JSON.stringify(res)}`);
 }
 
 async function airdrop2(arweave: Arweave, wallet: string, num: number) {
     const wallett = getWallet(wallet);
     const addr = await arweave.wallets.getAddress(wallett);
-    let res = await arweave.api.get(`mint/${addr}/10000000000000000`);
+    let res = await arweave.api.get(`mint/${addr}/${num * 1e12}`);
     console.log(`airdrop result:${JSON.stringify(res)}`);
 }
 
